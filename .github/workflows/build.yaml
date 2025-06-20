@@ -7,9 +7,10 @@ on:
       - master
     paths-ignore:
       - "**/*.md"
-      - "terraform/"
+      - "terraform/*"
       - "README"
       - "README.*"
+      - ".github/workflows/*"
 
 env:
   IMAGE_NAME: mdsahiloss/simple-time-service
