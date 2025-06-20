@@ -12,7 +12,7 @@ terraform {
   backend "s3" {
     bucket         = "all-terraform-state-files"
     key            = "assessments/particle41/terraform.tfstate"
-    region         = var.region
+    region         = "us-east-1"
     dynamodb_table = "assessments-particle41-terraformtfstate"
     encrypt        = true
   }
