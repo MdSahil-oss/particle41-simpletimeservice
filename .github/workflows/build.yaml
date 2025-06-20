@@ -7,7 +7,7 @@ on:
       - master
     paths-ignore:
       - "**/*.md"
-      - "terraform-config/"
+      - "terraform*/"
       - "README"
       - "README.*"
 
