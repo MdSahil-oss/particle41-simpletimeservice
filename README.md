@@ -1,7 +1,11 @@
-# Repository struction
+# Repository structure
 
 ```bash
 .
+├── .github
+│   └── workflows
+│       ├── build.yaml # build & push container image
+│       └── terraform.yaml # update infra on AWS
 ├── app
 │   ├── Dockerfile
 │   ├── go.mod
@@ -40,7 +44,7 @@ docker run -p 8080:8080 mdsahiloss/simple-time-service:1.0
 ```
 
 
-# Creating Infra on AWS
+# Create Infra on AWS
 
 Before creating infra make sure you set up AWS creadentials on your system, If not then do so by following instructions
 
@@ -57,6 +61,8 @@ then execute following command in order to have setup infra on AWS:
 ```bash
 cd terraform/
 terraform init
-terraform plan # optional to have resource modification report
-terraform apply
+terraform plan -out=tfplan # optional to have resource modification report
+terraform apply -auto-approve tfplan
 ```
+
+**Visit the deployed web using obtained URL from terraform output**
